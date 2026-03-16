@@ -1,11 +1,21 @@
+aid: wcag
 name: WCAG
-description: WCAG is a technology or concept used in computing and information technology
-  to address specific technical challenges. It provides capabilities that help practitioners
-  build, manage, or improve systems and processes in their domain.
-url: null
+description: Web Content Accessibility Guidelines (WCAG) are a set of international
+  standards for making web content accessible to people with disabilities. Published
+  by the W3C Web Accessibility Initiative, WCAG covers a wide range of recommendations
+  for making web content more accessible.
+type: Index
+url: https://www.w3.org/WAI/standards-guidelines/wcag/
 tags:
-- WCAG
+  - WCAG
+  - Accessibility
+  - Web Standards
+  - W3C
 created: '2025'
-modified: '2025'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis: []
 common: []
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

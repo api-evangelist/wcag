@@ -1,16 +1,13 @@
 aid: wcag
 name: WCAG
-description: Web Content Accessibility Guidelines (WCAG) are a set of international
-  standards for making web content accessible to people with disabilities. Published
-  by the W3C Web Accessibility Initiative, WCAG covers a wide range of recommendations
-  for making web content more accessible.
+description: Web Content Accessibility Guidelines (WCAG) are a set of international standards for making web content accessible to people with disabilities. Published by the W3C Web Accessibility Initiative, WCAG covers a wide range of recommendations for making web content more accessible.
 type: Index
 url: https://www.w3.org/WAI/standards-guidelines/wcag/
 tags:
-  - WCAG
   - Accessibility
-  - Web Standards
   - W3C
+  - WCAG
+  - Web Standards
 created: '2025'
 modified: '2026-03-16'
 specificationVersion: '0.19'

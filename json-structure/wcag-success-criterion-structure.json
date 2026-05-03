@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wcag/refs/heads/main/json-structure/wcag-success-criterion-structure.json",
+  "name": "SuccessCriterion",
+  "description": "A WCAG success criterion defining a testable requirement for web content accessibility.",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "level",
+    "principle",
+    "guideline"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the success criterion (e.g., 1.1.1, 2.4.7).",
+      "pattern": "^[1-4]\\.[1-9]\\.[0-9]+$",
+      "example": "1.1.1"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short title of the success criterion.",
+      "example": "Non-text Content"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full normative text of the success criterion.",
+      "example": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose."
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "A",
+        "AA",
+        "AAA"
+      ],
+      "description": "Conformance level: A (minimum), AA (standard), AAA (enhanced).",
+      "example": "A"
+    },
+    "principle": {
+      "type": "string",
+      "enum": [
+        "Perceivable",
+        "Operable",
+        "Understandable",
+        "Robust"
+      ],
+      "description": "The POUR principle this criterion belongs to.",
+      "example": "Perceivable"
+    },
+    "guideline": {
+      "type": "string",
+      "description": "Parent guideline identifier and title.",
+      "example": "1.1 Text Alternatives"
+    },
+    "wcag_version": {
+      "type": "string",
+      "description": "WCAG version that introduced or updated this criterion.",
+      "enum": [
+        "2.0",
+        "2.1",
+        "2.2"
+      ],
+      "example": "2.0"
+    },
+    "url": {
+      "type": "uri",
+      "description": "URL to the official specification text for this criterion.",
+      "example": "https://www.w3.org/TR/WCAG22/#non-text-content"
+    },
+    "understanding_url": {
+      "type": "uri",
+      "description": "URL to the Understanding WCAG document for this criterion.",
+      "example": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html"
+    },
+    "sufficient_techniques": {
+      "type": "array",
+      "description": "List of sufficient technique identifiers for meeting this criterion.",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "G94",
+        "H37",
+        "H36"
+      ]
+    },
+    "failures": {
+      "type": "array",
+      "description": "List of failure technique identifiers that fail this criterion.",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "F3",
+        "F13"
+      ]
+    }
+  }
+}

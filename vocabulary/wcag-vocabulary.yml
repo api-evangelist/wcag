@@ -1,0 +1,222 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "WCAG"
+  description: >-
+    Normative vocabulary for the Web Content Accessibility Guidelines (WCAG),
+    mapping accessibility principles, success criteria, conformance levels,
+    testing methodologies, and implementation techniques across the W3C WAI
+    standards ecosystem.
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+operational:
+  apis:
+    - namespace: wcag
+      version: "2.2"
+      baseUrl: https://www.w3.org/TR/WCAG22/
+      status: active
+      description: WCAG 2.2 - ISO/IEC 40500:2025
+    - namespace: wcag3
+      version: "3.0-draft"
+      baseUrl: https://w3c.github.io/wcag3/guidelines/
+      status: draft
+      description: WCAG 3.0 Working Draft (January 2026)
+    - namespace: wai-aria
+      version: "1.2"
+      baseUrl: https://www.w3.org/TR/wai-aria/
+      status: active
+      description: WAI-ARIA 1.2 Accessible Rich Internet Applications
+
+  resources:
+    - name: success-criteria
+      api: wcag
+      description: Testable requirements for web content accessibility
+      actions:
+        - read
+        - evaluate
+        - test
+    - name: guidelines
+      api: wcag
+      description: Grouped success criteria organized by accessibility principle
+      actions:
+        - read
+    - name: techniques
+      api: wcag
+      description: Sufficient and advisory techniques for meeting success criteria
+      actions:
+        - read
+        - apply
+    - name: conformance-claims
+      api: wcag
+      description: Formal accessibility conformance claims for web resources
+      actions:
+        - create
+        - read
+        - update
+    - name: act-rules
+      api: wcag
+      description: Machine-executable accessibility conformance testing rules
+      actions:
+        - execute
+        - validate
+    - name: aria-roles
+      api: wai-aria
+      description: Semantic role definitions for accessible UI components
+      actions:
+        - apply
+        - validate
+
+  actions:
+    - name: read
+      pattern: read
+      description: Retrieve specification content or criterion definition
+    - name: evaluate
+      pattern: query
+      description: Evaluate web content against a success criterion
+    - name: test
+      pattern: query
+      description: Execute automated or manual accessibility test
+    - name: apply
+      pattern: write
+      description: Apply a technique or role to web content
+    - name: create
+      pattern: write
+      description: Create a conformance claim
+    - name: validate
+      pattern: query
+      description: Validate conformance against WCAG criteria
+    - name: execute
+      pattern: query
+      description: Execute ACT rules against a web resource
+
+  schemas:
+    core:
+      - name: SuccessCriterion
+        description: Single testable WCAG success criterion
+        key_properties:
+          - id
+          - title
+          - level
+          - principle
+          - guideline
+          - wcag_version
+      - name: ConformanceClaim
+        description: Formal WCAG accessibility conformance claim
+        key_properties:
+          - claim_date
+          - conformance_level
+          - wcag_version
+          - scope_url
+          - organization
+    wcag3:
+      - name: Outcome
+        description: WCAG 3.0 outcome-based accessibility requirement
+        key_properties:
+          - id
+          - title
+          - rating
+    aria:
+      - name: AriaRole
+        description: WAI-ARIA role with allowed states and properties
+        key_properties:
+          - name
+          - description
+          - allowed_states
+          - required_properties
+
+  enums:
+    conformance_levels:
+      - A
+      - AA
+      - AAA
+    principles:
+      - Perceivable
+      - Operable
+      - Understandable
+      - Robust
+    wcag_versions:
+      - "2.0"
+      - "2.1"
+      - "2.2"
+    technique_types:
+      - sufficient
+      - advisory
+      - failure
+    test_results:
+      - passed
+      - failed
+      - cantTell
+      - inapplicable
+      - untested
+
+capability:
+  workflows:
+    - name: accessibility-conformance-evaluation
+      description: Evaluate web content for WCAG conformance using automated and manual testing
+      tools:
+        - evaluate-success-criteria
+        - run-act-rules
+        - generate-conformance-report
+      personas:
+        - Accessibility Specialist
+        - QA Engineer
+
+  personas:
+    - id: accessibility-specialist
+      name: Accessibility Specialist
+      description: Expert conducting WCAG conformance evaluations and remediations
+      workflows:
+        - accessibility-conformance-evaluation
+    - id: qa-engineer
+      name: QA Engineer
+      description: Engineer integrating automated accessibility testing into CI/CD pipelines
+      workflows:
+        - accessibility-conformance-evaluation
+    - id: content-author
+      name: Content Author
+      description: Author creating accessible web content following WCAG guidelines
+
+  domains:
+    - name: Perceivable
+      description: Information and UI components must be presentable to all users
+      resources:
+        - success-criteria
+    - name: Operable
+      description: UI components and navigation must be operable by all users
+      resources:
+        - success-criteria
+        - aria-roles
+    - name: Understandable
+      description: Information and UI operation must be understandable
+      resources:
+        - success-criteria
+    - name: Robust
+      description: Content must be robust enough for interpretation by assistive technologies
+      resources:
+        - success-criteria
+        - aria-roles
+
+crossReference:
+  - resource: success-criteria
+    actions:
+      - evaluate
+      - test
+    personas:
+      - Accessibility Specialist
+      - QA Engineer
+
+  - resource: act-rules
+    actions:
+      - execute
+      - validate
+    personas:
+      - QA Engineer
+
+  - resource: aria-roles
+    actions:
+      - apply
+      - validate
+    personas:
+      - Accessibility Specialist
+      - Content Author

@@ -1,0 +1,97 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "wcag": "https://www.w3.org/WAI/standards/wcag/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "earl": "http://www.w3.org/ns/earl#",
+
+    "SuccessCriterion": "wcag:SuccessCriterion",
+    "ConformanceClaim": "wcag:ConformanceClaim",
+    "Guideline": "wcag:Guideline",
+    "Principle": "wcag:Principle",
+    "Technique": "wcag:Technique",
+    "TestResult": "earl:TestResult",
+
+    "id": {
+      "@id": "dcterms:identifier",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "level": {
+      "@id": "wcag:conformanceLevel",
+      "@type": "xsd:string"
+    },
+    "principle": {
+      "@id": "wcag:principle",
+      "@type": "xsd:string"
+    },
+    "guideline": {
+      "@id": "wcag:guideline",
+      "@type": "xsd:string"
+    },
+    "wcagVersion": {
+      "@id": "wcag:version",
+      "@type": "xsd:string"
+    },
+    "understandingUrl": {
+      "@id": "wcag:understandingUrl",
+      "@type": "@id"
+    },
+    "sufficientTechniques": {
+      "@id": "wcag:sufficientTechniques",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "failures": {
+      "@id": "wcag:failures",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "claimDate": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:date"
+    },
+    "conformanceLevel": {
+      "@id": "wcag:conformanceLevel",
+      "@type": "xsd:string"
+    },
+    "scopeUrl": {
+      "@id": "wcag:scopeUrl",
+      "@type": "@id"
+    },
+    "scopeDescription": {
+      "@id": "wcag:scopeDescription",
+      "@type": "xsd:string"
+    },
+    "organization": {
+      "@id": "schema:organization",
+      "@type": "xsd:string"
+    },
+    "evaluationApproach": {
+      "@id": "wcag:evaluationApproach",
+      "@type": "xsd:string"
+    },
+    "knownLimitations": {
+      "@id": "wcag:knownLimitations",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "contactUrl": {
+      "@id": "wcag:contactUrl",
+      "@type": "@id"
+    }
+  }
+}

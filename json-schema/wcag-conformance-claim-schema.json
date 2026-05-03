@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/wcag/refs/heads/main/json-schema/wcag-conformance-claim-schema.json",
+  "title": "ConformanceClaim",
+  "description": "A WCAG conformance claim documenting an organization's accessibility compliance for a web resource.",
+  "type": "object",
+  "required": ["claim_date", "conformance_level", "scope_url", "wcag_version"],
+  "properties": {
+    "claim_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the conformance claim was made or last reviewed.",
+      "example": "2026-05-03"
+    },
+    "conformance_level": {
+      "type": "string",
+      "enum": ["A", "AA", "AAA"],
+      "description": "Claimed WCAG conformance level.",
+      "example": "AA"
+    },
+    "wcag_version": {
+      "type": "string",
+      "enum": ["2.0", "2.1", "2.2"],
+      "description": "WCAG version for which conformance is claimed.",
+      "example": "2.2"
+    },
+    "scope_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the web resource for which the claim is made.",
+      "example": "https://example.com/"
+    },
+    "scope_description": {
+      "type": "string",
+      "description": "Description of the scope of the conformance claim.",
+      "example": "The entire example.com website excluding third-party embedded content."
+    },
+    "organization": {
+      "type": "string",
+      "description": "Name of the organization making the claim.",
+      "example": "Example Corporation"
+    },
+    "evaluation_approach": {
+      "type": "string",
+      "description": "Description of how the conformance evaluation was conducted.",
+      "example": "Combination of automated testing with axe-core and manual expert review."
+    },
+    "known_limitations": {
+      "type": "array",
+      "description": "List of known accessibility issues or limitations.",
+      "items": {
+        "type": "string"
+      },
+      "example": ["Third-party video player may not fully support captions on mobile."]
+    },
+    "contact_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL for reporting accessibility issues.",
+      "example": "https://example.com/accessibility-feedback"
+    }
+  }
+}

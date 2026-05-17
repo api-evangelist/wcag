@@ -143,7 +143,7 @@ common:
   - type: Vocabulary
     url: vocabulary/wcag-vocabulary.yml
     title: WCAG Vocabulary
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/wcag-context.jsonld
     title: WCAG JSON-LD Context
   - type: Features

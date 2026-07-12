@@ -125,6 +125,8 @@ apis:
         url: https://act-rules.github.io/
         title: ACT Rules Community
 common:
+  - type: DomainSecurity
+    url: security/wcag-domain-security.yml
   - type: Website
     url: https://www.w3.org/WAI/
     title: W3C Web Accessibility Initiative

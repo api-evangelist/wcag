@@ -34,7 +34,7 @@ tags:
   - Inclusive Design
 created: '2025'
 modified: '2026-05-03'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: wcag:wcag-2-2
     name: WCAG 2.2

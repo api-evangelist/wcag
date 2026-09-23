@@ -1,0 +1,32 @@
+# Front Door AI Index — wcag — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: wcag
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.w3.org
+  final_host: www.w3.org
+  ownership: unresolved
+  owner: null
+  shares_host_with:
+  - accessibility-standards
+  - soa
+  - soap
+  - technology-standards
+  - wsdl
+  - xml
+  - xslt
+  inherited_from: null
+  verdict: scored
+  score: null
+  host_score: 2
+  density: null
+  words: 865
+  tiers:
+    agentic: 2
+    core: 0
+    model: 0
+  ambiguous: 0
+  top_terms:
+    inference: 2
